@@ -65,7 +65,7 @@ if ($_SESSION['EZWeblogger_auth']) {
 $dir = "data/" ;
 	if( is_dir( $dir ) && $handle = opendir( $dir ) ) {
 		while( ($file = readdir($handle)) !== false ) {
-			if( filetype( $path = $dir . $file ) == "file"  && !strpos($file, '_admin')) {
+			if( filetype( $path = $dir . $file ) == "file"  && !strpos($file, '_admin') && !strpos($file, 'htaccess')) {
 				$ip =[];
 				$page = [];
 				$data = file_get_contents('data/'.$file); # Per day
